@@ -49,20 +49,27 @@
 
   /* ---------- Encabezado ---------- */
 
+  .encabezado {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .marca {
-    height: 4.5rem;
+    height: 3.25rem;
     width: auto;
+    flex: 0 0 auto;
     align-self: flex-start;
     object-fit: contain;
     display: block;
-    margin: 0 0 2.25rem;
+    margin: 0 auto 2rem 0;
   }
 
   .retrato {
-    width: 6rem;
-    height: 6rem;
+    width: 10rem;
+    height: 10rem;
     flex: 0 0 auto;
-    align-self: flex-start;
     border-radius: 50%;
     box-shadow: inset 0 0 0 1px var(--linea);
     object-fit: cover;
@@ -95,13 +102,15 @@
     font-weight: 500;
     color: var(--gris);
     max-width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ---------- Acción principal ---------- */
 
   .guardar {
     display: block;
-    margin: 2.25rem 0 2.5rem;
+    margin: 1.75rem 0 2.5rem;
     padding: 1.125rem 1.25rem;
     border-radius: 0.75rem;
     background: var(--azul);
@@ -146,10 +155,43 @@
 
   dl { margin: 0; }
 
+  /* ---------- Marcas del grupo ---------- */
+
+  .marcas {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+  }
+
+  .marcas figure {
+    margin: 0;
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .marcas img {
+    height: 2.5rem;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .marcas figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gris);
+  }
+
   /* ---------- Redes de la empresa ---------- */
 
   .redes-titulo {
-    margin: 2.25rem 0 0.875rem;
+    margin: 2rem 0 0.875rem;
+    text-align: center;
     font-size: 0.8125rem;
     font-weight: 700;
     color: var(--gris);
@@ -159,6 +201,7 @@
   .redes {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.625rem;
   }
 
@@ -201,13 +244,28 @@
 
 <main class="tarjeta">
 
-  <img class="marca" src="credian10.png" alt="Credian · 10 años" width="229" height="160">
+  <header class="encabezado">
+    <img class="marca" src="credian10.png" alt="Credian · 10 años" width="229" height="160">
+    <img class="retrato" src="adri.jpg" alt="Adriana Araiza Ramírez" width="160" height="160">
+    <h1>Adriana<br>Araiza</h1>
+    <p class="puesto">Gerente Comercial y de Operaciones</p>
+    <p class="lugar">Grupo Credian — San Luis Potosí</p>
+  </header>
 
-  <img class="retrato" src="adri.jpg" alt="Adriana Araiza Ramírez" width="96" height="96">
-
-  <h1>Adriana<br>Araiza</h1>
-  <p class="puesto">Gerente de operaciones</p>
-  <p class="lugar">Financiera RECREA, SOFOM E.N.R. — San Luis Potosí</p>
+  <div class="marcas">
+    <figure>
+      <img src="m-credian.png" alt="Credian" width="140" height="96">
+      <figcaption>Credian</figcaption>
+    </figure>
+    <figure>
+      <img src="m-arrendia.png" alt="Arrendia" width="140" height="96">
+      <figcaption>Arrendia</figcaption>
+    </figure>
+    <figure>
+      <img src="m-dabox.png" alt="Dabox" width="140" height="96">
+      <figcaption>Dabox</figcaption>
+    </figure>
+  </div>
 
   <a class="guardar" href="contacto.vcf">Guardar contacto</a>
 
